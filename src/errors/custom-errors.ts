@@ -8,3 +8,10 @@ export class CustomError extends Error {
     Object.setPrototypeOf(this, new.target.prototype);
   }
 }
+
+export class NoFestivalFoundError extends CustomError {
+  constructor() {
+    super("No festival found", 404);
+    this.name = "NoFestivalFoundError";
+  }
+}

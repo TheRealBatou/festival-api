@@ -3,6 +3,7 @@ dotenv.config();
 
 import express from "express";
 import { AppDataSource } from "./data-source";
+import festivalRoutes from "./routes/festival.routes";
 
 const app = express();
 const baseUrl = process.env.BASE_URL;
@@ -12,6 +13,7 @@ const port = Number(process.env.BASE_PORT);
 app.use(express.json());
 
 // routes
+app.use("/api/v1/festival", festivalRoutes);
 
 // Connect to database
 AppDataSource.initialize()
