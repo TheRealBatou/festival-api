@@ -13,7 +13,16 @@ export class FestivalController {
       const page = parseInt(req.query.page as string) || 1;
       const limit = parseInt(req.query.limit as string) || 5;
 
-      const festivals = await this.festivalService.loadFestivals(page, limit);
+      const filters = {
+        name: req.query.name as string | undefined,
+        location: req.query.location as string | undefined,
+      };
+
+      const festivals = await this.festivalService.loadFestivals(
+        page,
+        limit,
+        filters
+      );
 
       res.status(200).json(festivals);
     } catch (error) {

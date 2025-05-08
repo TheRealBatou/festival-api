@@ -1,23 +1,35 @@
 import { AppDataSource } from "../data-source";
 import { Festival } from "../entities/festival.entity";
-import { NoFestivalFoundError } from "../errors/custom-errors";
+import {
+  NoFestivalFoundError,
+  QueryBuilderError,
+} from "../errors/custom-errors";
 
 export class FestivalService {
   private readonly festivalRepo = AppDataSource.getRepository(Festival);
 
-  public async loadFestivals(page: number, limit: number) {
+  public async loadFestivals(
+    page: number,
+    limit: number,
+    filters: { name?: string; location?: string }
+  ) {
     const offset = (page - 1) * limit;
 
-    const [festivals, total] = await this.festivalRepo.findAndCount({
-      skip: offset,
-      take: limit,
-    });
+    const query = await this.createFilterQuery(filters);
 
-    const totalPages = Math.ceil(total / limit);
+    if (!query) {
+      throw new QueryBuilderError();
+    }
+
+    query.skip(offset).take(limit);
+
+    const [festivals, total] = await query.getManyAndCount();
 
     if (!festivals) {
       throw new NoFestivalFoundError();
     }
+
+    const totalPages = Math.ceil(total / limit);
 
     return {
       data: festivals,
@@ -26,5 +38,26 @@ export class FestivalService {
       total,
       limit,
     };
+  }
+
+  private async createFilterQuery(filters: {
+    name?: string;
+    location?: string;
+  }) {
+    const query = this.festivalRepo.createQueryBuilder("festival");
+
+    if (filters.name) {
+      query.andWhere("festival.name ILIKE :name", {
+        name: `%${filters.name}%`,
+      });
+    }
+
+    if (filters.location) {
+      query.andWhere("festival.location = :location", {
+        location: filters.location,
+      });
+    }
+
+    return query;
   }
 }
