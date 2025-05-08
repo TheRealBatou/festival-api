@@ -10,7 +10,10 @@ export class FestivalController {
   // Implement filtering options
   public async loadFestivals(req: Request, res: Response) {
     try {
-      const festivals = await this.festivalService.loadFestivals();
+      const page = parseInt(req.query.page as string) || 1;
+      const limit = parseInt(req.query.limit as string) || 5;
+
+      const festivals = await this.festivalService.loadFestivals(page, limit);
 
       res.status(200).json(festivals);
     } catch (error) {
