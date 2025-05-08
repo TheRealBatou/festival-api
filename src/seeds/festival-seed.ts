@@ -14,7 +14,7 @@ async function festivalSeed() {
     const rockAmRing = festivalRepo.create({
       name: "Rock am Ring",
       date: "2025-06-10T10:00:00+02:00",
-      location: "Nuerburgring, Germany",
+      location: "Germany",
       description: "Rock am Ring",
       imageUrl: "rock_am_ring.jpg",
     });
@@ -22,7 +22,7 @@ async function festivalSeed() {
     const coachella = festivalRepo.create({
       name: "Coachella",
       date: "2025-05-10T10:00:00+02:00",
-      location: "Indio, California",
+      location: "USA",
       description: "Coachella",
       imageUrl: "coachella.jpg",
     });
@@ -30,7 +30,7 @@ async function festivalSeed() {
     const tomorrowland = festivalRepo.create({
       name: "Tomorrowland",
       date: "2025-07-05T08:00:00+02:00",
-      location: "Antwerp, Belgium",
+      location: "Belgium",
       description: "Tomorrowland",
       imageUrl: "tomorrowland.jpg",
     });
@@ -38,7 +38,7 @@ async function festivalSeed() {
     const lollapalooza = festivalRepo.create({
       name: "Lollapalooza",
       date: "2025-06-10T10:00:00+02:00",
-      location: "Grant Park, Chicago",
+      location: "USA",
       description: "Lollapalooza",
       imageUrl: "lollapalooza.jpg",
     });
@@ -46,7 +46,7 @@ async function festivalSeed() {
     const rockInRio = festivalRepo.create({
       name: "Rock in Rio",
       date: "2025-06-10T10:00:00+02:00",
-      location: "Rio de Janeiro",
+      location: "Brazil",
       description: "Rock in Rio",
       imageUrl: "rock_in_rio.jpg",
     });
@@ -54,7 +54,7 @@ async function festivalSeed() {
     const glastonbury = festivalRepo.create({
       name: "Glastonbury",
       date: "2025-06-10T10:00:00+02:00",
-      location: "Somerset, England",
+      location: "England",
       description: "Glastonbury",
       imageUrl: "glastonbury.jpg",
     });
@@ -62,7 +62,7 @@ async function festivalSeed() {
     const fujiRockFestival = festivalRepo.create({
       name: "Fuji Rock Festival",
       date: "2025-06-10T10:00:00+02:00",
-      location: "Naeba, Japan",
+      location: "Japan",
       description: "Fuji Rock Festival",
       imageUrl: "fujiRockFestival.jpg",
     });
@@ -70,21 +70,21 @@ async function festivalSeed() {
     const austinCityLimits = festivalRepo.create({
       name: "Austin City Limits",
       date: "2026-02-05T08:00:00+02:00",
-      location: "Austin, Texas",
+      location: "USA",
       imageUrl: "austinCityLimits.jpg",
     });
     festivals.push(austinCityLimits);
     const sziget = festivalRepo.create({
       name: "Sziget",
       date: "2025-06-10T10:00:00+02:00",
-      location: "Budapest, Hungary",
+      location: "Hungary",
       description: "Sziget",
     });
     festivals.push(sziget);
     const wackenOpenAir = festivalRepo.create({
       name: "Wacken Open Air",
       date: "2026-05-05T08:00:00+02:00",
-      location: "Wacken, Germany",
+      location: "Germany",
     });
     festivals.push(wackenOpenAir);
 
