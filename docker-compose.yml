@@ -11,10 +11,23 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  seeder:
+    build: .
+    depends_on:
+      - db
+    command: npm run seed
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: festival_database
+
   app:
     build: .
     depends_on:
       - db
+      - seeder
     ports:
       - "3000:3000"
     environment:
