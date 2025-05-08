@@ -13,7 +13,7 @@ const port = Number(process.env.BASE_PORT);
 app.use(express.json());
 
 // routes
-app.use("/api/v1/festival", festivalRoutes);
+app.use("/api/v1/festivals", festivalRoutes);
 
 // Connect to database
 AppDataSource.initialize()

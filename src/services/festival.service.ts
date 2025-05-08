@@ -1,6 +1,7 @@
 import { AppDataSource } from "../data-source";
 import { Festival } from "../entities/festival.entity";
 import {
+  InvalidFestivalId,
   NoFestivalFoundError,
   QueryBuilderError,
 } from "../errors/custom-errors";
@@ -38,6 +39,16 @@ export class FestivalService {
       total,
       limit,
     };
+  }
+
+  public async loadFestival(festivalId: number) {
+    const festival = await this.festivalRepo.findOneBy({ festivalId });
+
+    if (!festival) {
+      throw new NoFestivalFoundError();
+    }
+
+    return festival;
   }
 
   private async createFilterQuery(filters: {

@@ -7,5 +7,6 @@ const festivalService = new FestivalService();
 const festivalController = new FestivalController(festivalService);
 
 router.get("/", festivalController.loadFestivals);
+router.get("/:festivalId", festivalController.loadFestival);
 
 export default router;

@@ -18,7 +18,14 @@ export class NoFestivalFoundError extends CustomError {
 
 export class QueryBuilderError extends CustomError {
   constructor() {
-    super("No festival found", 500);
+    super("Error during creation of QueryBuilder", 500);
     this.name = "QueryBuilderError";
+  }
+}
+
+export class InvalidFestivalId extends CustomError {
+  constructor() {
+    super("Invalid festival ID", 400);
+    this.name = "InvalidFestivalId";
   }
 }

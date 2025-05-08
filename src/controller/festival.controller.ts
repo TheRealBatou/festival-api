@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import { FestivalService } from "../services/festival.service";
-import { CustomError } from "../errors/custom-errors";
+import { CustomError, InvalidFestivalId } from "../errors/custom-errors";
 
 export class FestivalController {
   constructor(private readonly festivalService: FestivalService) {
     this.loadFestivals = this.loadFestivals.bind(this);
+    this.loadFestival = this.loadFestival.bind(this);
   }
 
-  // Implement filtering options
   public async loadFestivals(req: Request, res: Response) {
     try {
       const page = parseInt(req.query.page as string) || 1;
@@ -27,6 +27,28 @@ export class FestivalController {
       );
 
       res.status(200).json(festivals);
+    } catch (error) {
+      if (error instanceof CustomError) {
+        res.status(error.statusCode).json({ message: error.message });
+      } else {
+        console.error("Error during registration ", error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    }
+  }
+
+  public async loadFestival(req: Request, res: Response) {
+    try {
+      // the 10 defines the decimal radix
+      const festivalId = parseInt(req.params.festivalId, 10);
+
+      if (isNaN(festivalId)) {
+        throw new InvalidFestivalId();
+      }
+
+      const festival = await this.festivalService.loadFestival(festivalId);
+
+      res.status(200).json(festival);
     } catch (error) {
       if (error instanceof CustomError) {
         res.status(error.statusCode).json({ message: error.message });

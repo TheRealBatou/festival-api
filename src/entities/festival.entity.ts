@@ -9,7 +9,6 @@ export class Festival {
   @Column()
   name!: string;
 
-  // in the challenge this is set to string not a date(what's the best solution?)
   // Format: ISO 8601
   @Column()
   date!: string;
