@@ -1,10 +1,7 @@
 import { AppDataSource } from "../data-source";
 import { Festival } from "../entities/festival.entity";
-import {
-  InvalidFestivalId,
-  NoFestivalFoundError,
-  QueryBuilderError,
-} from "../errors/custom-errors";
+import { NoFestivalFoundError, QueryBuilderError } from "../errors/custom-errors";
+import { FestivalListResult } from "../interfaces/festival.interface";
 
 export class FestivalService {
   private readonly festivalRepo = AppDataSource.getRepository(Festival);
@@ -13,7 +10,7 @@ export class FestivalService {
     page: number,
     limit: number,
     filters: { name?: string; location?: string; from?: string; to?: string }
-  ) {
+  ): Promise<FestivalListResult> {
     const offset = (page - 1) * limit;
 
     const query = await this.createFilterQuery(filters);
@@ -41,7 +38,7 @@ export class FestivalService {
     };
   }
 
-  public async loadFestival(festivalId: number) {
+  public async loadFestival(festivalId: number): Promise<Festival> {
     const festival = await this.festivalRepo.findOneBy({ festivalId });
 
     if (!festival) {
@@ -57,7 +54,7 @@ export class FestivalService {
     location: string,
     description: string,
     imageUrl: string
-  ) {
+  ): Promise<Festival> {
     const festival = this.festivalRepo.create({
       name,
       date,
@@ -69,6 +66,16 @@ export class FestivalService {
     await this.festivalRepo.save(festival);
 
     return festival;
+  }
+
+  public async deleteFestival(festivalId: number): Promise<void> {
+    const festival = await this.festivalRepo.findOneBy({ festivalId });
+
+    if (!festival) {
+      throw new NoFestivalFoundError();
+    }
+
+    await this.festivalRepo.delete(festival);
   }
 
   private async createFilterQuery(filters: {

@@ -7,6 +7,7 @@ export class FestivalController {
     this.loadFestivals = this.loadFestivals.bind(this);
     this.loadFestival = this.loadFestival.bind(this);
     this.createFestival = this.createFestival.bind(this);
+    this.deleteFestival = this.deleteFestival.bind(this);
   }
 
   public async loadFestivals(req: Request, res: Response) {
@@ -87,6 +88,20 @@ export class FestivalController {
       );
 
       res.status(200).json(festival);
+    } catch (error) {
+      if (error instanceof CustomError) {
+        res.status(error.statusCode).json({ message: error.message });
+      } else {
+        console.error("Error during registration ", error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    }
+  }
+
+  public async deleteFestival(req: Request, res: Response) {
+    try {
+      // TODO
+      res.status(200).json(); // edit?
     } catch (error) {
       if (error instanceof CustomError) {
         res.status(error.statusCode).json({ message: error.message });
