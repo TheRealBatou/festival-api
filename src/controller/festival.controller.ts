@@ -164,6 +164,12 @@ function validateFestivalUpdateInput(input: FestivalUpdateDTO): Partial<Festival
   }
 
   if (typeof input.date === "string" && input.date.trim() !== "") {
+    // date-string is parsed to Date to validate correct ISO-8601 format
+    const parsedDate = Date.parse(input.date.trim());
+    if (isNaN(parsedDate)) {
+      throw new InvalidUpdateInput("Invalid ISO-8601 format for date field");
+    }
+
     validatedData.date = input.date.trim();
   } else if (input.date !== undefined) {
     throw new InvalidUpdateInput("Invalid date provided (ISO-8601 format needed)");
