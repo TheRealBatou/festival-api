@@ -16,6 +16,8 @@ export class FestivalController {
       const filters = {
         name: req.query.name as string | undefined,
         location: req.query.location as string | undefined,
+        from: req.query.from as string | undefined,
+        to: req.query.to as string | undefined,
       };
 
       const festivals = await this.festivalService.loadFestivals(

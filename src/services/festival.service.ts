@@ -11,7 +11,7 @@ export class FestivalService {
   public async loadFestivals(
     page: number,
     limit: number,
-    filters: { name?: string; location?: string }
+    filters: { name?: string; location?: string; from?: string; to?: string }
   ) {
     const offset = (page - 1) * limit;
 
@@ -43,6 +43,8 @@ export class FestivalService {
   private async createFilterQuery(filters: {
     name?: string;
     location?: string;
+    from?: string;
+    to?: string;
   }) {
     const query = this.festivalRepo.createQueryBuilder("festival");
 
@@ -56,6 +58,14 @@ export class FestivalService {
       query.andWhere("festival.location = :location", {
         location: filters.location,
       });
+    }
+
+    if (filters.from) {
+      query.andWhere("festival.date >= :from", { from: filters.from });
+    }
+
+    if (filters.to) {
+      query.andWhere("festival.date <= :to", { to: filters.to });
     }
 
     return query;
