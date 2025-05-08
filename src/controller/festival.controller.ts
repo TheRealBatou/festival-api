@@ -6,6 +6,7 @@ export class FestivalController {
   constructor(private readonly festivalService: FestivalService) {
     this.loadFestivals = this.loadFestivals.bind(this);
     this.loadFestival = this.loadFestival.bind(this);
+    this.createFestival = this.createFestival.bind(this);
   }
 
   public async loadFestivals(req: Request, res: Response) {
@@ -20,11 +21,7 @@ export class FestivalController {
         to: req.query.to as string | undefined,
       };
 
-      const festivals = await this.festivalService.loadFestivals(
-        page,
-        limit,
-        filters
-      );
+      const festivals = await this.festivalService.loadFestivals(page, limit, filters);
 
       res.status(200).json(festivals);
     } catch (error) {
@@ -47,6 +44,47 @@ export class FestivalController {
       }
 
       const festival = await this.festivalService.loadFestival(festivalId);
+
+      res.status(200).json(festival);
+    } catch (error) {
+      if (error instanceof CustomError) {
+        res.status(error.statusCode).json({ message: error.message });
+      } else {
+        console.error("Error during registration ", error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    }
+  }
+
+  public async createFestival(req: Request, res: Response) {
+    try {
+      const { name, date, location, description, imageUrl } = req.body;
+
+      // Validate that the required fields are filled and strings
+      if (typeof name !== "string" || typeof date !== "string" || typeof location !== "string") {
+        res
+          .status(400)
+          .json({ message: "The fields name, date and location are required and must be strings" });
+        return;
+      }
+
+      // Validate if the field date fits the ISO-8601
+      if (isNaN(Date.parse(date))) {
+        res.status(400).json({ message: "Date must be a valid ISO-8601 string" });
+        return;
+      }
+
+      // If the optional fields aren't strings or not filled an empty string is used instead
+      const descriptionString = typeof description === "string" ? description : "";
+      const imageUrlString = typeof imageUrl === "string" ? imageUrl : "";
+
+      const festival = await this.festivalService.createFestival(
+        name,
+        date,
+        location,
+        descriptionString,
+        imageUrlString
+      );
 
       res.status(200).json(festival);
     } catch (error) {

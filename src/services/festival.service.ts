@@ -51,6 +51,26 @@ export class FestivalService {
     return festival;
   }
 
+  public async createFestival(
+    name: string,
+    date: string,
+    location: string,
+    description: string,
+    imageUrl: string
+  ) {
+    const festival = this.festivalRepo.create({
+      name,
+      date,
+      location,
+      description,
+      imageUrl,
+    });
+
+    await this.festivalRepo.save(festival);
+
+    return festival;
+  }
+
   private async createFilterQuery(filters: {
     name?: string;
     location?: string;
