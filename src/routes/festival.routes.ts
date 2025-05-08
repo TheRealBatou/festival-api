@@ -10,5 +10,6 @@ router.get("/", festivalController.loadFestivals);
 router.get("/:festivalId", festivalController.loadFestival);
 router.post("/", festivalController.createFestival);
 router.delete("/:festivalId", festivalController.deleteFestival);
+router.put("/:festivalId", festivalController.updateFestival);
 
 export default router;

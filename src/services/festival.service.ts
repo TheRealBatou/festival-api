@@ -78,6 +78,22 @@ export class FestivalService {
     await this.festivalRepo.delete(festival);
   }
 
+  public async updateFestival(
+    festivalId: number,
+    updateData: Partial<Festival>
+  ): Promise<Festival> {
+    const festival = await this.festivalRepo.findOneBy({ festivalId });
+
+    if (!festival) {
+      throw new NoFestivalFoundError();
+    }
+
+    Object.assign(festival, updateData);
+    await this.festivalRepo.save(festival);
+
+    return festival;
+  }
+
   private async createFilterQuery(filters: {
     name?: string;
     location?: string;

@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { FestivalService } from "../services/festival.service";
-import { CustomError, InvalidFestivalId } from "../errors/custom-errors";
+import { CustomError, InvalidFestivalId, InvalidUpdateInput } from "../errors/custom-errors";
+import { Festival } from "../entities/festival.entity";
+import { FestivalUpdateDTO } from "../interfaces/festivalUpdateDTO.interface";
 
 export class FestivalController {
   constructor(private readonly festivalService: FestivalService) {
@@ -10,7 +12,7 @@ export class FestivalController {
     this.deleteFestival = this.deleteFestival.bind(this);
   }
 
-  public async loadFestivals(req: Request, res: Response) {
+  public async loadFestivals(req: Request, res: Response): Promise<void> {
     try {
       const page = parseInt(req.query.page as string) || 1;
       const limit = parseInt(req.query.limit as string) || 5;
@@ -29,13 +31,13 @@ export class FestivalController {
       if (error instanceof CustomError) {
         res.status(error.statusCode).json({ message: error.message });
       } else {
-        console.error("Error during registration ", error);
+        console.error("Error during loading festivals ", error);
         res.status(500).json({ message: "Internal server error" });
       }
     }
   }
 
-  public async loadFestival(req: Request, res: Response) {
+  public async loadFestival(req: Request, res: Response): Promise<void> {
     try {
       // the 10 defines the decimal radix
       const festivalId = parseInt(req.params.festivalId, 10);
@@ -51,13 +53,13 @@ export class FestivalController {
       if (error instanceof CustomError) {
         res.status(error.statusCode).json({ message: error.message });
       } else {
-        console.error("Error during registration ", error);
+        console.error("Error during loading a festival ", error);
         res.status(500).json({ message: "Internal server error" });
       }
     }
   }
 
-  public async createFestival(req: Request, res: Response) {
+  public async createFestival(req: Request, res: Response): Promise<void> {
     try {
       const { name, date, location, description, imageUrl } = req.body;
 
@@ -92,23 +94,99 @@ export class FestivalController {
       if (error instanceof CustomError) {
         res.status(error.statusCode).json({ message: error.message });
       } else {
-        console.error("Error during registration ", error);
+        console.error("Error during festival creation ", error);
         res.status(500).json({ message: "Internal server error" });
       }
     }
   }
 
-  public async deleteFestival(req: Request, res: Response) {
+  public async deleteFestival(req: Request, res: Response): Promise<void> {
     try {
-      // TODO
-      res.status(200).json(); // edit?
+      // the 10 defines the decimal radix
+      const festivalId = parseInt(req.params.festivalId, 10);
+
+      if (isNaN(festivalId)) {
+        throw new InvalidFestivalId();
+      }
+
+      await this.festivalService.deleteFestival(festivalId);
+
+      res.status(200).json(`Festival with ID ${festivalId} deleted`);
     } catch (error) {
       if (error instanceof CustomError) {
         res.status(error.statusCode).json({ message: error.message });
       } else {
-        console.error("Error during registration ", error);
+        console.error("Error during deletion of a festival ", error);
         res.status(500).json({ message: "Internal server error" });
       }
     }
   }
+
+  public async updateFestival(req: Request, res: Response): Promise<void> {
+    try {
+      // the 10 defines the decimal radix
+      const festivalId = parseInt(req.params.festivalId, 10);
+
+      if (isNaN(festivalId)) {
+        throw new InvalidFestivalId();
+      }
+
+      // DTO with all fields optional
+      const updateInput = req.body as FestivalUpdateDTO;
+
+      // validates all inputs and creates a Partial(mandatory fields throw errors if empty)
+      const validatedData = validateFestivalUpdateInput(updateInput);
+
+      const festival = await this.festivalService.updateFestival(festivalId, validatedData);
+
+      res.status(200).json(festival);
+    } catch (error) {
+      if (error instanceof CustomError) {
+        res.status(error.statusCode).json({ message: error.message });
+      } else {
+        console.error("Error while updating a festival", error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    }
+  }
+}
+
+// function validates the input data you receive and creates an Partial<Festival> object
+// every field is tested for typeof "string" and if the string only consists of whitespace characters
+// mandatory fields throw errors if they're empty
+function validateFestivalUpdateInput(input: FestivalUpdateDTO): Partial<Festival> {
+  const validatedData: Partial<Festival> = {};
+
+  if (typeof input.name === "string" && input.name.trim() !== "") {
+    validatedData.name = input.name.trim();
+  } else if (input.name !== undefined) {
+    throw new InvalidUpdateInput("Invalid name provided");
+  }
+
+  if (typeof input.date === "string" && input.date.trim() !== "") {
+    validatedData.date = input.date.trim();
+  } else if (input.date !== undefined) {
+    throw new InvalidUpdateInput("Invalid date provided (ISO-8601 format needed)");
+  }
+
+  if (typeof input.location === "string" && input.location.trim() !== "") {
+    validatedData.location = input.location.trim();
+  } else if (input.location !== undefined) {
+    throw new InvalidUpdateInput("Invalid location provided");
+  }
+
+  if (typeof input.description === "string") {
+    validatedData.description = input.description.trim();
+  }
+
+  if (typeof input.imageUrl === "string") {
+    validatedData.imageUrl = input.imageUrl.trim();
+  }
+
+  // If not a single input field is correct
+  if (Object.keys(validatedData).length === 0) {
+    throw new InvalidUpdateInput("No valid fields for update provided");
+  }
+
+  return validatedData;
 }

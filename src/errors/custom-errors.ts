@@ -29,3 +29,10 @@ export class InvalidFestivalId extends CustomError {
     this.name = "InvalidFestivalId";
   }
 }
+
+export class InvalidUpdateInput extends CustomError {
+  constructor(message: string) {
+    super(message, 400);
+    this.name = "InvalidUpdateInput";
+  }
+}
