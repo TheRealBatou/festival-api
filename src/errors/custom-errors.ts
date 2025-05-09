@@ -23,14 +23,14 @@ export class QueryBuilderError extends CustomError {
   }
 }
 
-export class InvalidFestivalId extends CustomError {
+export class InvalidFestivalIdError extends CustomError {
   constructor() {
     super("Invalid festival ID", 400);
     this.name = "InvalidFestivalId";
   }
 }
 
-export class InvalidUpdateInput extends CustomError {
+export class InvalidUpdateInputError extends CustomError {
   constructor(message: string) {
     super(message, 400);
     this.name = "InvalidUpdateInput";
