@@ -10,6 +10,7 @@ export class FestivalController {
     this.loadFestival = this.loadFestival.bind(this);
     this.createFestival = this.createFestival.bind(this);
     this.deleteFestival = this.deleteFestival.bind(this);
+    this.updateFestival = this.updateFestival.bind(this);
   }
 
   public async loadFestivals(req: Request, res: Response): Promise<void> {
