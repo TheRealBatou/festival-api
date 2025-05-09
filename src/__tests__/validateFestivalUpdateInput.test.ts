@@ -1,7 +1,9 @@
 import { validateFestivalUpdateInput } from "../utils/validation.utils";
 import { InvalidUpdateInputError } from "../errors/custom-errors";
 
+// unit tests for the function to validate the user-input for the update call
 describe("validateFestivalUpdateInput", () => {
+  // test with all fields filled
   it("should return validated data when all filled fields are valid", () => {
     const validInput = {
       name: "Test Festival",
@@ -16,6 +18,7 @@ describe("validateFestivalUpdateInput", () => {
     expect(result).toEqual(validInput);
   });
 
+  // test with some fields filled
   it("should accept an object with only some fields filled", () => {
     const partialInput = {
       name: "Test Festival",
@@ -27,6 +30,7 @@ describe("validateFestivalUpdateInput", () => {
     expect(result).toEqual(partialInput);
   });
 
+  // testing if the correct error is thrown if the input is empty
   it("should throw an InvalidUpdateInputError when the input is empty", () => {
     const emptyInput = {};
 

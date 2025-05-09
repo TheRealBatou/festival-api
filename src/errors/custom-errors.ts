@@ -1,3 +1,4 @@
+// CustomError class as base for all custom errors so only one case is needed in the catch-blocks (not one for every different custom error)
 export class CustomError extends Error {
   public statusCode: number;
 

@@ -15,9 +15,11 @@ export class FestivalController {
 
   public async loadFestivals(req: Request, res: Response): Promise<void> {
     try {
+      // received page and numer of items per page (with default values)
       const page = parseInt(req.query.page as string) || 1;
       const limit = parseInt(req.query.limit as string) || 5;
 
+      // filtering options for the list with festivals
       const filters = {
         name: req.query.name as string | undefined,
         location: req.query.location as string | undefined,
@@ -40,7 +42,7 @@ export class FestivalController {
 
   public async loadFestival(req: Request, res: Response): Promise<void> {
     try {
-      // the 10 defines the decimal radix
+      // the 10 defines the decimal radix (so numbers arent misinterpreted)
       const festivalId = parseInt(req.params.festivalId, 10);
 
       if (isNaN(festivalId)) {
@@ -103,7 +105,7 @@ export class FestivalController {
 
   public async deleteFestival(req: Request, res: Response): Promise<void> {
     try {
-      // the 10 defines the decimal radix
+      // the 10 defines the decimal radix (so numbers arent misinterpreted)
       const festivalId = parseInt(req.params.festivalId, 10);
 
       if (isNaN(festivalId)) {
@@ -125,17 +127,17 @@ export class FestivalController {
 
   public async updateFestival(req: Request, res: Response): Promise<void> {
     try {
-      // the 10 defines the decimal radix
+      // the 10 defines the decimal radix (so numbers arent misinterpreted)
       const festivalId = parseInt(req.params.festivalId, 10);
 
       if (isNaN(festivalId)) {
         throw new InvalidFestivalIdError();
       }
 
-      // DTO with all fields optional
+      // DTO with all fields of a festival as optional
       const updateInput = req.body as FestivalUpdateDTO;
 
-      // validates all inputs and creates a Partial(mandatory fields throw errors if empty)
+      // validates all inputs and creates a Partial<Festival> (mandatory festival fields throw errors if empty)
       const validatedData = validateFestivalUpdateInput(updateInput);
 
       const festival = await this.festivalService.updateFestival(festivalId, validatedData);

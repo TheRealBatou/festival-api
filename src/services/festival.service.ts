@@ -11,16 +11,20 @@ export class FestivalService {
     limit: number,
     filters: { name?: string; location?: string; from?: string; to?: string }
   ): Promise<FestivalListResult> {
+    // offset defines how many items are skipped for the list
     const offset = (page - 1) * limit;
 
+    // building a query which considers the filtering options
     const query = await this.createFilterQuery(filters);
 
     if (!query) {
       throw new QueryBuilderError();
     }
 
+    // sets the offset (number of items skipped) and limit (number of items shown)
     query.skip(offset).take(limit);
 
+    // selects the festivals and counts the total amount to be shown in the additional result info
     const [festivals, total] = await query.getManyAndCount();
 
     if (!festivals) {
@@ -88,6 +92,7 @@ export class FestivalService {
       throw new NoFestivalFoundError();
     }
 
+    // Assigns the values of the Partial<Festival> (which contains the updated values for the festival) to the festival
     Object.assign(festival, updateData);
     await this.festivalRepo.save(festival);
 
@@ -100,6 +105,7 @@ export class FestivalService {
     from?: string;
     to?: string;
   }) {
+    // building a query which considers the filtering options
     const query = this.festivalRepo.createQueryBuilder("festival");
 
     if (filters.name) {

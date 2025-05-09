@@ -1,3 +1,4 @@
+// app was moved out of index.ts to make integration tests easier
 import dotenv from "dotenv";
 dotenv.config();
 import express from "express";

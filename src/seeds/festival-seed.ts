@@ -1,12 +1,13 @@
-import { DataSource } from "typeorm";
 import { AppDataSource } from "../data-source";
 import { Festival } from "../entities/festival.entity";
 
+// generates demo data
 async function festivalSeed() {
   await AppDataSource.initialize();
 
   const festivalRepo = AppDataSource.getRepository(Festival);
 
+  // only generates the demo data if no data exists yet
   const existingFestivals = await festivalRepo.find();
   if (existingFestivals.length === 0) {
     const festivals: Festival[] = [];
