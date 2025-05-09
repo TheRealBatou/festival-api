@@ -1,19 +1,11 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import express from "express";
+import app from "./app";
 import { AppDataSource } from "./data-source";
-import festivalRoutes from "./routes/festival.routes";
 
-const app = express();
 const baseUrl = process.env.BASE_URL;
 const port = Number(process.env.BASE_PORT);
-
-// Middleware for JSON processing
-app.use(express.json());
-
-// routes
-app.use("/api/v1/festivals", festivalRoutes);
 
 // Connect to database
 AppDataSource.initialize()
