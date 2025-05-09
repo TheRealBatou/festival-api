@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { FestivalService } from "../services/festival.service";
-import { CustomError, InvalidFestivalId } from "../errors/custom-errors";
+import { CustomError, InvalidFestivalIdError } from "../errors/custom-errors";
 import { FestivalUpdateDTO } from "../interfaces/festivalUpdateDTO.interface";
 import { validateFestivalUpdateInput } from "../utils/validation.utils";
 
@@ -44,7 +44,7 @@ export class FestivalController {
       const festivalId = parseInt(req.params.festivalId, 10);
 
       if (isNaN(festivalId)) {
-        throw new InvalidFestivalId();
+        throw new InvalidFestivalIdError();
       }
 
       const festival = await this.festivalService.loadFestival(festivalId);
@@ -107,7 +107,7 @@ export class FestivalController {
       const festivalId = parseInt(req.params.festivalId, 10);
 
       if (isNaN(festivalId)) {
-        throw new InvalidFestivalId();
+        throw new InvalidFestivalIdError();
       }
 
       await this.festivalService.deleteFestival(festivalId);
@@ -129,7 +129,7 @@ export class FestivalController {
       const festivalId = parseInt(req.params.festivalId, 10);
 
       if (isNaN(festivalId)) {
-        throw new InvalidFestivalId();
+        throw new InvalidFestivalIdError();
       }
 
       // DTO with all fields optional
