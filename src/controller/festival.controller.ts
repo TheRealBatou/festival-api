@@ -90,7 +90,7 @@ export class FestivalController {
         imageUrlString
       );
 
-      res.status(200).json(festival);
+      res.status(201).json(festival);
     } catch (error) {
       if (error instanceof CustomError) {
         res.status(error.statusCode).json({ message: error.message });
