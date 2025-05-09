@@ -1,22 +1,12 @@
-// temporarily overwriting of DB_HOST for the test because the value in .env is set for docker (save the original value)
-//const originalHostEnv = process.env.DB_HOST;
-//process.env.DB_HOST = "localhost";
-
 import request from "supertest";
 import app from "../app";
 import { AppDataSource } from "../data-source";
 
 beforeAll(async () => {
-  // temporarily overwriting of DB_HOST for the test because the value in .env is set for docker
-  //process.env.DB_HOST = "localhost";
-
   await AppDataSource.initialize();
 });
 
 afterAll(async () => {
-  // return the DB_HOST back to its original value
-  //process.env.DB_HOST = originalHostEnv;
-
   await AppDataSource.destroy();
 });
 
