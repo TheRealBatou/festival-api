@@ -11,7 +11,6 @@ A RESTful API for managing festivals, built with Node.js, Typescript, Express, T
 
 ### Prerequisites
 - Docker & Docker Compose
-- Node.js (only if not using Docker)
 
 ### Clone The Repository
 
@@ -22,8 +21,10 @@ cd festival-api
 
 ### Run With Docker
 
+The command starts Docker in the background for easier use of the console to start tests
+
 ```bash
-docker-compose up --build
+docker-compose up -d --build
 ```
 ## Environment Variables
 
@@ -59,4 +60,6 @@ docker compose exec app npm test
 Swagger UI is available at:
 http://localhost:3000/api-docs
 
+
+This project is a showcase for demonstration purposes only. Contributions are not accepted.
 
