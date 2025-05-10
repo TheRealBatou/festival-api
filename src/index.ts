@@ -39,7 +39,7 @@ AppDataSource.initialize()
 
     // Start server
     app.listen(port, () => {
-      logger.info(`Server's running at ${baseUrl}${port}`);
+      logger.info(`Server's running at ${baseUrl}:${port}`);
     });
   })
   .catch((error: unknown) => {
