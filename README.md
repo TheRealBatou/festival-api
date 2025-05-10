@@ -1,5 +1,5 @@
 # Festival API
-A RESTful API for managin festivals, built with Node.js, Typescript, Express, TypeORM and PostgreSQL
+A RESTful API for managing festivals, built with Node.js, Typescript, Express, TypeORM and PostgreSQL
 
 ## Features
 - CRUD operations for festivals
