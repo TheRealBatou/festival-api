@@ -114,3 +114,104 @@
 [2025-05-10 14:22:17] INFO: Validated Data: {"name":"New Festival Name","description":"New Festival Description"}
 [2025-05-10 14:22:17] INFO: Current festival values: {"festivalId":11,"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg"}
 [2025-05-10 14:22:17] INFO: Festival with updated values: {"festivalId":11,"name":"New Festival Name","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"New Festival Description","imageUrl":"test_festival.jpg"}
+[2025-05-10 14:59:00] INFO: Database-connection successful!
+[2025-05-10 14:59:00] INFO: Server's running at http://localhost:3000
+[2025-05-10 14:59:02] DEBUG: Entering method: loadFestivals()
+[2025-05-10 14:59:02] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 14:59:02] INFO: Filtering options-> {"name":"rock","location":"Japan","from":"2025-01-01","to":"2025-12-31"}
+[2025-05-10 14:59:02] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 14:59:02] DEBUG: Number of total pages: 1
+[2025-05-10 14:59:02] INFO: Loaded festivals: {"data":[{"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}],"page":1,"totalPages":1,"total":1,"limit":10}
+[2025-05-10 15:03:00] INFO: Database-connection successful!
+[2025-05-10 15:03:00] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:03:06] DEBUG: Entering method: loadFestivals()
+[2025-05-10 15:03:06] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 15:03:06] INFO: Filtering options-> {"name":"rock","location":"Japan","from":"2025-01-01","to":"2025-12-31"}
+[2025-05-10 15:03:06] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 15:03:06] DEBUG: Number of total pages: 1
+[2025-05-10 15:03:06] INFO: Loaded festivals: {"data":[{"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}],"page":1,"totalPages":1,"total":1,"limit":10}
+[2025-05-10 15:05:33] INFO: Database-connection successful!
+[2025-05-10 15:05:33] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:06:23] INFO: Database-connection successful!
+[2025-05-10 15:06:23] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:06:25] DEBUG: Entering method: loadFestivals()
+[2025-05-10 15:06:25] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 15:06:25] INFO: Filtering options-> {"name":"rock","location":"Japan","from":"2025-01-01","to":"2025-12-31"}
+[2025-05-10 15:06:25] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 15:06:25] DEBUG: Number of total pages: 1
+[2025-05-10 15:06:25] INFO: Loaded festivals: {"data":[{"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}],"page":1,"totalPages":1,"total":1,"limit":10}
+[2025-05-10 15:13:27] INFO: Database-connection successful!
+[2025-05-10 15:13:27] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:13:36] DEBUG: Entering method: loadFestivals()
+[2025-05-10 15:13:36] INFO: Selected Page: 1 / Number of shown festivals: 5
+[2025-05-10 15:13:36] INFO: Filtering options-> {}
+[2025-05-10 15:13:36] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 15:13:36] DEBUG: Number of total pages: 2
+[2025-05-10 15:13:36] INFO: Loaded festivals: {"data":[{"festivalId":1,"name":"Rock am Ring","date":"2025-06-10T10:00:00+02:00","location":"Germany","description":"Rock am Ring","imageUrl":"rock_am_ring.jpg"},{"festivalId":2,"name":"Coachella","date":"2025-05-10T10:00:00+02:00","location":"USA","description":"Coachella","imageUrl":"coachella.jpg"},{"festivalId":3,"name":"Tomorrowland","date":"2025-07-05T08:00:00+02:00","location":"Belgium","description":"Tomorrowland","imageUrl":"tomorrowland.jpg"},{"festivalId":4,"name":"Lollapalooza","date":"2025-06-10T10:00:00+02:00","location":"USA","description":"Lollapalooza","imageUrl":"lollapalooza.jpg"},{"festivalId":5,"name":"Rock in Rio","date":"2025-06-10T10:00:00+02:00","location":"Brazil","description":"Rock in Rio","imageUrl":"rock_in_rio.jpg"}],"page":1,"totalPages":2,"total":10,"limit":5}
+[2025-05-10 15:19:06] INFO: Database-connection successful!
+[2025-05-10 15:19:06] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:22:46] INFO: Database-connection successful!
+[2025-05-10 15:22:46] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:23:08] DEBUG: Entering method: loadFestivals()
+[2025-05-10 15:23:08] INFO: Selected Page: 1 / Number of shown festivals: 5
+[2025-05-10 15:23:08] INFO: Filtering options-> {}
+[2025-05-10 15:23:08] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 15:23:08] DEBUG: Number of total pages: 2
+[2025-05-10 15:23:08] INFO: Loaded festivals: {"data":[{"festivalId":1,"name":"Rock am Ring","date":"2025-06-10T10:00:00+02:00","location":"Germany","description":"Rock am Ring","imageUrl":"rock_am_ring.jpg"},{"festivalId":2,"name":"Coachella","date":"2025-05-10T10:00:00+02:00","location":"USA","description":"Coachella","imageUrl":"coachella.jpg"},{"festivalId":3,"name":"Tomorrowland","date":"2025-07-05T08:00:00+02:00","location":"Belgium","description":"Tomorrowland","imageUrl":"tomorrowland.jpg"},{"festivalId":4,"name":"Lollapalooza","date":"2025-06-10T10:00:00+02:00","location":"USA","description":"Lollapalooza","imageUrl":"lollapalooza.jpg"},{"festivalId":5,"name":"Rock in Rio","date":"2025-06-10T10:00:00+02:00","location":"Brazil","description":"Rock in Rio","imageUrl":"rock_in_rio.jpg"}],"page":1,"totalPages":2,"total":10,"limit":5}
+[2025-05-10 15:28:31] INFO: Database-connection successful!
+[2025-05-10 15:28:31] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:30:00] DEBUG: Entering method: loadFestival()
+[2025-05-10 15:30:00] INFO: Try to load the festival with the ID: 7
+[2025-05-10 15:30:00] INFO: Loaded festival: {"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}
+[2025-05-10 15:34:12] INFO: Database-connection successful!
+[2025-05-10 15:34:12] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:36:12] INFO: Database-connection successful!
+[2025-05-10 15:36:12] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:37:05] DEBUG: Entering method: loadFestivals()
+[2025-05-10 15:37:05] INFO: Selected Page: 1 / Number of shown festivals: 5
+[2025-05-10 15:37:05] INFO: Filtering options-> {}
+[2025-05-10 15:37:05] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 15:37:05] DEBUG: Number of total pages: 2
+[2025-05-10 15:37:05] INFO: Loaded festivals: {"data":[{"festivalId":1,"name":"Rock am Ring","date":"2025-06-10T10:00:00+02:00","location":"Germany","description":"Rock am Ring","imageUrl":"rock_am_ring.jpg"},{"festivalId":2,"name":"Coachella","date":"2025-05-10T10:00:00+02:00","location":"USA","description":"Coachella","imageUrl":"coachella.jpg"},{"festivalId":3,"name":"Tomorrowland","date":"2025-07-05T08:00:00+02:00","location":"Belgium","description":"Tomorrowland","imageUrl":"tomorrowland.jpg"},{"festivalId":4,"name":"Lollapalooza","date":"2025-06-10T10:00:00+02:00","location":"USA","description":"Lollapalooza","imageUrl":"lollapalooza.jpg"},{"festivalId":5,"name":"Rock in Rio","date":"2025-06-10T10:00:00+02:00","location":"Brazil","description":"Rock in Rio","imageUrl":"rock_in_rio.jpg"}],"page":1,"totalPages":2,"total":10,"limit":5}
+[2025-05-10 15:37:18] DEBUG: Entering method: loadFestival()
+[2025-05-10 15:37:18] INFO: Try to load the festival with the ID: 7
+[2025-05-10 15:37:18] INFO: Loaded festival: {"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}
+[2025-05-10 15:37:48] DEBUG: Entering method: deleteFestival()
+[2025-05-10 15:37:48] INFO: Try to delete the festival with the ID: 7
+[2025-05-10 15:37:48] INFO: Festival to be deleted: {"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}
+[2025-05-10 15:37:48] INFO: Festival deleted successfully
+[2025-05-10 15:37:58] DEBUG: Entering method: loadFestivals()
+[2025-05-10 15:37:58] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 15:37:58] INFO: Filtering options-> {}
+[2025-05-10 15:37:58] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 15:37:58] DEBUG: Number of total pages: 1
+[2025-05-10 15:37:58] INFO: Loaded festivals: {"data":[{"festivalId":1,"name":"Rock am Ring","date":"2025-06-10T10:00:00+02:00","location":"Germany","description":"Rock am Ring","imageUrl":"rock_am_ring.jpg"},{"festivalId":2,"name":"Coachella","date":"2025-05-10T10:00:00+02:00","location":"USA","description":"Coachella","imageUrl":"coachella.jpg"},{"festivalId":3,"name":"Tomorrowland","date":"2025-07-05T08:00:00+02:00","location":"Belgium","description":"Tomorrowland","imageUrl":"tomorrowland.jpg"},{"festivalId":4,"name":"Lollapalooza","date":"2025-06-10T10:00:00+02:00","location":"USA","description":"Lollapalooza","imageUrl":"lollapalooza.jpg"},{"festivalId":5,"name":"Rock in Rio","date":"2025-06-10T10:00:00+02:00","location":"Brazil","description":"Rock in Rio","imageUrl":"rock_in_rio.jpg"},{"festivalId":6,"name":"Glastonbury","date":"2025-06-10T10:00:00+02:00","location":"England","description":"Glastonbury","imageUrl":"glastonbury.jpg"},{"festivalId":8,"name":"Austin City Limits","date":"2026-02-05T08:00:00+02:00","location":"USA","description":null,"imageUrl":"austinCityLimits.jpg"},{"festivalId":9,"name":"Sziget","date":"2025-06-10T10:00:00+02:00","location":"Hungary","description":"Sziget","imageUrl":null},{"festivalId":10,"name":"Wacken Open Air","date":"2026-05-05T08:00:00+02:00","location":"Germany","description":null,"imageUrl":null}],"page":1,"totalPages":1,"total":9,"limit":10}
+[2025-05-10 15:38:38] DEBUG: Entering method: createFestival()
+[2025-05-10 15:38:38] INFO: Received information to create a festival: {"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg"}
+[2025-05-10 15:38:38] INFO: Created festival: {"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg","festivalId":11}
+[2025-05-10 15:41:54] INFO: Database-connection successful!
+[2025-05-10 15:41:54] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:42:01] DEBUG: Entering method: loadFestivals()
+[2025-05-10 15:42:01] INFO: Selected Page: 1 / Number of shown festivals: 5
+[2025-05-10 15:42:01] INFO: Filtering options-> {}
+[2025-05-10 15:42:01] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 15:42:01] DEBUG: Number of total pages: 2
+[2025-05-10 15:42:01] INFO: Loaded festivals: {"data":[{"festivalId":1,"name":"Rock am Ring","date":"2025-06-10T10:00:00+02:00","location":"Germany","description":"Rock am Ring","imageUrl":"rock_am_ring.jpg"},{"festivalId":2,"name":"Coachella","date":"2025-05-10T10:00:00+02:00","location":"USA","description":"Coachella","imageUrl":"coachella.jpg"},{"festivalId":3,"name":"Tomorrowland","date":"2025-07-05T08:00:00+02:00","location":"Belgium","description":"Tomorrowland","imageUrl":"tomorrowland.jpg"},{"festivalId":4,"name":"Lollapalooza","date":"2025-06-10T10:00:00+02:00","location":"USA","description":"Lollapalooza","imageUrl":"lollapalooza.jpg"},{"festivalId":5,"name":"Rock in Rio","date":"2025-06-10T10:00:00+02:00","location":"Brazil","description":"Rock in Rio","imageUrl":"rock_in_rio.jpg"}],"page":1,"totalPages":2,"total":10,"limit":5}
+[2025-05-10 15:42:07] DEBUG: Entering method: loadFestivals()
+[2025-05-10 15:42:07] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 15:42:07] INFO: Filtering options-> {}
+[2025-05-10 15:42:07] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 15:42:07] DEBUG: Number of total pages: 1
+[2025-05-10 15:42:07] INFO: Loaded festivals: {"data":[{"festivalId":1,"name":"Rock am Ring","date":"2025-06-10T10:00:00+02:00","location":"Germany","description":"Rock am Ring","imageUrl":"rock_am_ring.jpg"},{"festivalId":2,"name":"Coachella","date":"2025-05-10T10:00:00+02:00","location":"USA","description":"Coachella","imageUrl":"coachella.jpg"},{"festivalId":3,"name":"Tomorrowland","date":"2025-07-05T08:00:00+02:00","location":"Belgium","description":"Tomorrowland","imageUrl":"tomorrowland.jpg"},{"festivalId":4,"name":"Lollapalooza","date":"2025-06-10T10:00:00+02:00","location":"USA","description":"Lollapalooza","imageUrl":"lollapalooza.jpg"},{"festivalId":5,"name":"Rock in Rio","date":"2025-06-10T10:00:00+02:00","location":"Brazil","description":"Rock in Rio","imageUrl":"rock_in_rio.jpg"},{"festivalId":6,"name":"Glastonbury","date":"2025-06-10T10:00:00+02:00","location":"England","description":"Glastonbury","imageUrl":"glastonbury.jpg"},{"festivalId":8,"name":"Austin City Limits","date":"2026-02-05T08:00:00+02:00","location":"USA","description":null,"imageUrl":"austinCityLimits.jpg"},{"festivalId":9,"name":"Sziget","date":"2025-06-10T10:00:00+02:00","location":"Hungary","description":"Sziget","imageUrl":null},{"festivalId":10,"name":"Wacken Open Air","date":"2026-05-05T08:00:00+02:00","location":"Germany","description":null,"imageUrl":null},{"festivalId":11,"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg"}],"page":1,"totalPages":1,"total":10,"limit":10}
+[2025-05-10 15:43:51] INFO: Database-connection successful!
+[2025-05-10 15:43:51] INFO: Server's running at http://localhost:3000
+[2025-05-10 15:44:10] DEBUG: Entering method: updateFestival()
+[2025-05-10 15:44:10] INFO: Try to update the festival with the ID: 11
+[2025-05-10 15:44:10] INFO: Updated values for the festival: {"name":"New Festival Name","description":"New Festival Description"}
+[2025-05-10 15:44:10] DEBUG: Entering method: validateFestivalUpdateInput()
+[2025-05-10 15:44:10] INFO: Validate the festival update input: {"name":"New Festival Name","description":"New Festival Description"}
+[2025-05-10 15:44:10] DEBUG: Name is valid: New Festival Name
+[2025-05-10 15:44:10] DEBUG: Location is valid: New Festival Description
+[2025-05-10 15:44:10] INFO: Validated Data: {"name":"New Festival Name","description":"New Festival Description"}
+[2025-05-10 15:44:10] INFO: Current festival values: {"festivalId":11,"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg"}
+[2025-05-10 15:44:10] INFO: Festival with updated values: {"festivalId":11,"name":"New Festival Name","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"New Festival Description","imageUrl":"test_festival.jpg"}
