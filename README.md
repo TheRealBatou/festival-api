@@ -1,5 +1,6 @@
 # Festival API
-A RESTful API for managing festivals, built with Node.js, Typescript, Express, TypeORM and PostgreSQL
+A RESTful API for managing festivals, built with Node.js, Typescript, Express, TypeORM and PostgreSQL.
+(This project is a showcase for demonstration purposes only. Contributions are not accepted.)
 
 ## Features
 - CRUD operations for festivals
@@ -42,8 +43,6 @@ DB_PASSWORD=postgres
 DB_NAME=festival_database
 ```
 
-### Tests
-
 ## Running Tests
 
 Tests are written with Jest + Supertest
@@ -53,13 +52,8 @@ Testing inside Docker:
 ```bash
 docker compose exec app npm test
 ```
-### API Documentation
 
 ## Swagger UI Documentation
 
 Swagger UI is available at:
 http://localhost:3000/api-docs
-
-
-This project is a showcase for demonstration purposes only. Contributions are not accepted.
-
