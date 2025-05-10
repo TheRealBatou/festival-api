@@ -20,14 +20,7 @@ git clone https://github.com/TheRealBatou/festival-api.git
 cd festival-api
 ```
 
-### Run With Docker
-
-The command starts Docker in the background for easier use of the console to start tests
-
-```bash
-docker-compose up -d --build
-```
-## Environment Variables
+### Environment Variables
 
 The project uses a ".env" file. Example of the structure and needed variables:
 
@@ -41,6 +34,14 @@ DB_PORT=5432
 DB_USERNAME=postgres
 DB_PASSWORD=postgres
 DB_NAME=festival_database
+```
+
+### Run With Docker
+
+The command starts Docker in the background for easier use of the console to start tests
+
+```bash
+docker-compose up -d --build
 ```
 
 ## Running Tests
