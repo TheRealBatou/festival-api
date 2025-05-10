@@ -2,6 +2,7 @@ import { AppDataSource } from "../data-source";
 import { Festival } from "../entities/festival.entity";
 import { NoFestivalFoundError, QueryBuilderError } from "../errors/custom-errors";
 import { FestivalListResult } from "../interfaces/festival.interface";
+import logger from "../logger/logger";
 
 export class FestivalService {
   private readonly festivalRepo = AppDataSource.getRepository(Festival);
@@ -13,6 +14,8 @@ export class FestivalService {
   ): Promise<FestivalListResult> {
     // offset defines how many items are skipped for the list
     const offset = (page - 1) * limit;
+
+    logger.debug(`Number of items skipped in selection (offset): ${offset}`);
 
     // building a query which considers the filtering options
     const query = await this.createFilterQuery(filters);
@@ -32,6 +35,8 @@ export class FestivalService {
     }
 
     const totalPages = Math.ceil(total / limit);
+
+    logger.debug(`Number of total pages: ${totalPages}`);
 
     return {
       data: festivals,
@@ -79,6 +84,8 @@ export class FestivalService {
       throw new NoFestivalFoundError();
     }
 
+    logger.info(`Festival to be deleted: ${JSON.stringify(festival)}`);
+
     await this.festivalRepo.delete(festival);
   }
 
@@ -91,6 +98,8 @@ export class FestivalService {
     if (!festival) {
       throw new NoFestivalFoundError();
     }
+
+    logger.info(`Current festival values: ${JSON.stringify(festival)}`);
 
     // Assigns the values of the Partial<Festival> (which contains the updated values for the festival) to the festival
     Object.assign(festival, updateData);

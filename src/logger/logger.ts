@@ -11,9 +11,9 @@ if (!fs.existsSync(logDir)) {
 
 // Creates a logger that writes into a log file "logs/app.log
 // Format: leading timestamp followed by the log-level and then the log-message
-// log-level info includes the log-levels: error, warn and info
+// log-level debug includes the log-levels: error, warn, info, http and debug
 const logger = createLogger({
-  level: "info",
+  level: "debug",
   format: format.combine(
     format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
     format.printf(({ level, message, timestamp }) => {

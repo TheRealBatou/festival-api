@@ -1,0 +1,116 @@
+[2025-05-10 13:50:33] INFO: Database-connection successful!
+[2025-05-10 13:50:33] INFO: Server's running at http://localhost:3000
+[2025-05-10 13:50:59] INFO: Validate the festival update input: [object Object]
+[2025-05-10 13:50:59] DEBUG: Name is valid: Test Festival
+[2025-05-10 13:50:59] DEBUG: Date is valid: 2025-07-07T08:00:00+02:00
+[2025-05-10 13:50:59] DEBUG: Location is valid: Germany
+[2025-05-10 13:50:59] DEBUG: Location is valid: Test Description
+[2025-05-10 13:50:59] DEBUG: Location is valid: test_image.jpg
+[2025-05-10 13:50:59] INFO: Validated Data: [object Object]
+[2025-05-10 13:50:59] INFO: Validate the festival update input: [object Object]
+[2025-05-10 13:50:59] DEBUG: Name is valid: Test Festival
+[2025-05-10 13:50:59] DEBUG: Location is valid: Test Description
+[2025-05-10 13:50:59] INFO: Validated Data: [object Object]
+[2025-05-10 13:50:59] INFO: Validate the festival update input: [object Object]
+[2025-05-10 13:51:14] INFO: Received information to create a festival: [object Object]
+[2025-05-10 13:51:14] INFO: Created festival: [object Object]
+[2025-05-10 14:00:04] INFO: Database-connection successful!
+[2025-05-10 14:00:04] INFO: Server's running at http://localhost:3000
+[2025-05-10 14:00:23] INFO: Validate the festival update input: {"name":"Test Festival","date":"2025-07-07T08:00:00+02:00","location":"Germany","description":"Test Description","imageUrl":"test_image.jpg"}
+[2025-05-10 14:00:23] DEBUG: Name is valid: Test Festival
+[2025-05-10 14:00:23] DEBUG: Date is valid: 2025-07-07T08:00:00+02:00
+[2025-05-10 14:00:23] DEBUG: Location is valid: Germany
+[2025-05-10 14:00:23] DEBUG: Location is valid: Test Description
+[2025-05-10 14:00:23] DEBUG: Location is valid: test_image.jpg
+[2025-05-10 14:00:23] INFO: Validated Data: {"name":"Test Festival","date":"2025-07-07T08:00:00+02:00","location":"Germany","description":"Test Description","imageUrl":"test_image.jpg"}
+[2025-05-10 14:00:23] INFO: Validate the festival update input: {"name":"Test Festival","description":"Test Description"}
+[2025-05-10 14:00:23] DEBUG: Name is valid: Test Festival
+[2025-05-10 14:00:23] DEBUG: Location is valid: Test Description
+[2025-05-10 14:00:23] INFO: Validated Data: {"name":"Test Festival","description":"Test Description"}
+[2025-05-10 14:00:23] INFO: Validate the festival update input: {}
+[2025-05-10 14:00:37] INFO: Received information to create a festival: {"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg"}
+[2025-05-10 14:00:37] INFO: Created festival: {"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg","festivalId":12}
+[2025-05-10 14:01:38] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 14:01:38] INFO: Filtering options-> {}
+[2025-05-10 14:01:38] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 14:01:38] ERROR: Error during loading festivals: Converting circular structure to JSON
+    --> starting at object with constructor 'EntityMetadata'
+    |     property 'ownColumns' -> object with constructor 'Array'
+    |     index 0 -> object with constructor 'ColumnMetadata'
+    --- property 'entityMetadata' closes the circle
+[2025-05-10 14:04:06] INFO: Database-connection successful!
+[2025-05-10 14:04:06] INFO: Server's running at http://localhost:3000
+[2025-05-10 14:04:11] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 14:04:11] INFO: Filtering options-> {}
+[2025-05-10 14:04:11] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 14:04:11] INFO: Query with filters: [object Object]
+[2025-05-10 14:04:11] DEBUG: Number of total pages: 1
+[2025-05-10 14:04:11] INFO: Loaded festivals: {"data":[{"festivalId":1,"name":"Rock am Ring","date":"2025-06-10T10:00:00+02:00","location":"Germany","description":"Rock am Ring","imageUrl":"rock_am_ring.jpg"},{"festivalId":2,"name":"Coachella","date":"2025-05-10T10:00:00+02:00","location":"USA","description":"Coachella","imageUrl":"coachella.jpg"},{"festivalId":3,"name":"Tomorrowland","date":"2025-07-05T08:00:00+02:00","location":"Belgium","description":"Tomorrowland","imageUrl":"tomorrowland.jpg"},{"festivalId":4,"name":"Lollapalooza","date":"2025-06-10T10:00:00+02:00","location":"USA","description":"Lollapalooza","imageUrl":"lollapalooza.jpg"},{"festivalId":5,"name":"Rock in Rio","date":"2025-06-10T10:00:00+02:00","location":"Brazil","description":"Rock in Rio","imageUrl":"rock_in_rio.jpg"},{"festivalId":6,"name":"Glastonbury","date":"2025-06-10T10:00:00+02:00","location":"England","description":"Glastonbury","imageUrl":"glastonbury.jpg"},{"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"},{"festivalId":8,"name":"Austin City Limits","date":"2026-02-05T08:00:00+02:00","location":"USA","description":null,"imageUrl":"austinCityLimits.jpg"},{"festivalId":9,"name":"Sziget","date":"2025-06-10T10:00:00+02:00","location":"Hungary","description":"Sziget","imageUrl":null},{"festivalId":10,"name":"Wacken Open Air","date":"2026-05-05T08:00:00+02:00","location":"Germany","description":null,"imageUrl":null}],"page":1,"totalPages":1,"total":10,"limit":10}
+[2025-05-10 14:04:32] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 14:04:32] INFO: Filtering options-> {"location":"USA"}
+[2025-05-10 14:04:32] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 14:04:32] INFO: Query with filters: [object Object]
+[2025-05-10 14:04:32] DEBUG: Number of total pages: 1
+[2025-05-10 14:04:32] INFO: Loaded festivals: {"data":[{"festivalId":2,"name":"Coachella","date":"2025-05-10T10:00:00+02:00","location":"USA","description":"Coachella","imageUrl":"coachella.jpg"},{"festivalId":4,"name":"Lollapalooza","date":"2025-06-10T10:00:00+02:00","location":"USA","description":"Lollapalooza","imageUrl":"lollapalooza.jpg"},{"festivalId":8,"name":"Austin City Limits","date":"2026-02-05T08:00:00+02:00","location":"USA","description":null,"imageUrl":"austinCityLimits.jpg"}],"page":1,"totalPages":1,"total":3,"limit":10}
+[2025-05-10 14:04:53] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 14:04:53] INFO: Filtering options-> {"name":"rock","location":"Japan"}
+[2025-05-10 14:04:53] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 14:04:53] INFO: Query with filters: [object Object]
+[2025-05-10 14:04:53] DEBUG: Number of total pages: 1
+[2025-05-10 14:04:53] INFO: Loaded festivals: {"data":[{"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}],"page":1,"totalPages":1,"total":1,"limit":10}
+[2025-05-10 14:05:07] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 14:05:07] INFO: Filtering options-> {"name":"rock","location":"Japan","from":"2025-01-01","to":"2025-12-31"}
+[2025-05-10 14:05:07] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 14:05:07] INFO: Query with filters: [object Object]
+[2025-05-10 14:05:07] DEBUG: Number of total pages: 1
+[2025-05-10 14:05:07] INFO: Loaded festivals: {"data":[{"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}],"page":1,"totalPages":1,"total":1,"limit":10}
+[2025-05-10 14:07:31] INFO: Try to load the festival with the ID: 11
+[2025-05-10 14:07:31] ERROR: Error during loading a festival: No festival found
+[2025-05-10 14:07:39] INFO: Try to load the festival with the ID: 7
+[2025-05-10 14:07:39] INFO: Loaded festival: {"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}
+[2025-05-10 14:08:05] INFO: Try to delete the festival with the ID: 7
+[2025-05-10 14:08:05] INFO: Festival deleted successfully
+[2025-05-10 14:08:08] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 14:08:08] INFO: Filtering options-> {"name":"rock","location":"Japan","from":"2025-01-01","to":"2025-12-31"}
+[2025-05-10 14:08:08] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 14:08:08] INFO: Query with filters: [object Object]
+[2025-05-10 14:08:08] DEBUG: Number of total pages: 0
+[2025-05-10 14:08:08] INFO: Loaded festivals: {"data":[],"page":1,"totalPages":0,"total":0,"limit":10}
+[2025-05-10 14:16:19] INFO: Received information to create a festival: {"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg"}
+[2025-05-10 14:16:19] INFO: Created festival: {"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg","festivalId":11}
+[2025-05-10 14:16:27] INFO: Try to update the festival with the ID: 11
+[2025-05-10 14:16:27] INFO: Updated values for the festival: {"name":"New Festival Name","description":"New Festival Description"}
+[2025-05-10 14:16:27] INFO: Validate the festival update input: {"name":"New Festival Name","description":"New Festival Description"}
+[2025-05-10 14:16:27] DEBUG: Name is valid: New Festival Name
+[2025-05-10 14:16:27] DEBUG: Location is valid: New Festival Description
+[2025-05-10 14:16:27] INFO: Validated Data: {"name":"New Festival Name","description":"New Festival Description"}
+[2025-05-10 14:16:27] INFO: Current festival values: {"festivalId":11,"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg"}
+[2025-05-10 14:16:27] INFO: Festival with updated values: {"festivalId":11,"name":"New Festival Name","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"New Festival Description","imageUrl":"test_festival.jpg"}
+[2025-05-10 14:21:06] INFO: Database-connection successful!
+[2025-05-10 14:21:06] INFO: Server's running at http://localhost:3000
+[2025-05-10 14:21:58] DEBUG: Entering method: loadFestivals()
+[2025-05-10 14:21:58] INFO: Selected Page: 1 / Number of shown festivals: 10
+[2025-05-10 14:21:58] INFO: Filtering options-> {"name":"rock","location":"Japan","from":"2025-01-01","to":"2025-12-31"}
+[2025-05-10 14:21:58] DEBUG: Number of items skipped in selection (offset): 0
+[2025-05-10 14:21:58] DEBUG: Entering method: createFilterQuery()
+[2025-05-10 14:21:58] DEBUG: Number of total pages: 1
+[2025-05-10 14:21:58] INFO: Loaded festivals: {"data":[{"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}],"page":1,"totalPages":1,"total":1,"limit":10}
+[2025-05-10 14:22:04] DEBUG: Entering method: loadFestival()
+[2025-05-10 14:22:04] INFO: Try to load the festival with the ID: 7
+[2025-05-10 14:22:04] INFO: Loaded festival: {"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}
+[2025-05-10 14:22:08] DEBUG: Entering method: deleteFestival()
+[2025-05-10 14:22:08] INFO: Try to delete the festival with the ID: 7
+[2025-05-10 14:22:08] INFO: Festival to be deleted: {"festivalId":7,"name":"Fuji Rock Festival","date":"2025-06-10T10:00:00+02:00","location":"Japan","description":"Fuji Rock Festival","imageUrl":"fujiRockFestival.jpg"}
+[2025-05-10 14:22:08] INFO: Festival deleted successfully
+[2025-05-10 14:22:14] DEBUG: Entering method: createFestival()
+[2025-05-10 14:22:14] INFO: Received information to create a festival: {"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg"}
+[2025-05-10 14:22:14] INFO: Created festival: {"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg","festivalId":11}
+[2025-05-10 14:22:17] DEBUG: Entering method: updateFestival()
+[2025-05-10 14:22:17] INFO: Try to update the festival with the ID: 11
+[2025-05-10 14:22:17] INFO: Updated values for the festival: {"name":"New Festival Name","description":"New Festival Description"}
+[2025-05-10 14:22:17] INFO: Validate the festival update input: {"name":"New Festival Name","description":"New Festival Description"}
+[2025-05-10 14:22:17] DEBUG: Name is valid: New Festival Name
+[2025-05-10 14:22:17] DEBUG: Location is valid: New Festival Description
+[2025-05-10 14:22:17] INFO: Validated Data: {"name":"New Festival Name","description":"New Festival Description"}
+[2025-05-10 14:22:17] INFO: Current festival values: {"festivalId":11,"name":"Test Festival","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"Test Festival","imageUrl":"test_festival.jpg"}
+[2025-05-10 14:22:17] INFO: Festival with updated values: {"festivalId":11,"name":"New Festival Name","date":"2026-07-07T10:00:00+02:00","location":"Germany","description":"New Festival Description","imageUrl":"test_festival.jpg"}
