@@ -31,14 +31,13 @@ services:
     ports:
       - "3000:3000"
     environment:
+      BASE_URL: http://localhost
+      BASE_PORT: 3000
       DB_HOST: db
       DB_PORT: 5432
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
       DB_NAME: festival_database
-    volumes:
-      - .:/app
-    command: npm run start
 
 volumes:
   pgdata:
