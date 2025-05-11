@@ -32,7 +32,7 @@ This means you can simply use the provided Docker configuration without any addi
 The command starts Docker in the background (-d) for easier use of the console to start tests
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Development Setup
