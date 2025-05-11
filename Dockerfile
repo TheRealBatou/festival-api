@@ -14,5 +14,8 @@ COPY . .
 # Compile TypeScript
 RUN npx tsc
 
+# Port the container listens to
+EXPOSE 3000
+
 # Start App
 CMD ["npm", "run", "start"]
