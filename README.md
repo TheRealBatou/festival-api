@@ -1,5 +1,6 @@
 # Festival API
 A RESTful API for managing festivals, built with Node.js, Typescript, Express, TypeORM and PostgreSQL.
+
 (This project is a showcase for demonstration purposes only. Contributions are not accepted.)
 
 ## Features
@@ -22,26 +23,16 @@ cd festival-api
 
 ### Environment Variables
 
-The project uses a ".env" file. Example of the structure and needed variables:
-
-You **must** configure (in project root path):
-
-```env
-BASE_URL = http://localhost
-BASE_PORT = 3000
-DB_HOST=db
-DB_PORT=5432
-DB_USERNAME=postgres
-DB_PASSWORD=postgres
-DB_NAME=festival_database
-```
+No .env file is required to run this project.
+All necessary environment variables are already defined within the docker-compose.yml file for a seamless setup.
+This means you can simply use the provided Docker configuration without any additional configuration effort.
 
 ### Run With Docker
 
-The command starts Docker in the background for easier use of the console to start tests
+The command starts Docker in the background (-d) for easier use of the console to start tests
 
 ```bash
-docker-compose up -d --build
+docker-compose up -d
 ```
 
 ## Development Setup
