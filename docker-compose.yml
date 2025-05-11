@@ -12,7 +12,7 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   seeder:
-    build: .
+    image: therealbatou/festival-api:1.0.0
     depends_on:
       - db
     command: npm run seed
@@ -24,7 +24,7 @@ services:
       DB_NAME: festival_database
 
   app:
-    build: .
+    image: therealbatou/festival-api:1.0.0
     depends_on:
       - db
       - seeder
