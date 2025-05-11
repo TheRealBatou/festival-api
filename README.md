@@ -42,7 +42,7 @@ To keep the onboarding process smooth and predictable across systems, **Docker i
 
 For this reason, instructions for running the app outside of Docker (e.g., directly on a local machine) are intentionally not included.
 
-If you prefer to run the project locally without Docker, feel free to inspect the docker-compose.yml and .env example file to configure your own environment accordingly — but please note that this setup is not officially maintained.
+If you prefer to run the project locally without Docker, feel free to inspect the docker-compose.yml to configure your own environment accordingly — but please note that this setup is not officially maintained.
 
 ## Running Tests
 
